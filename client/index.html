@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Mp3Application</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+  <div class="modal fade" id="update-modal" tabindex="-1" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Update Track</h4>
+          <button class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input class="form-control" placeholder="Set new title" type="text" id="title"/>
+          </div>
+          <div class="form-group">
+            <label for="artist">Artist</label>
+            <input class="form-control" placeholder="Set new artist" type="text" id="artist"/>
+          </div>
+          <div class="form-group">
+            <label for="album">Album</label>
+            <input class="form-control" placeholder="Set new album" type="text" id="album"/>
+          </div>
+          <div class="form-group">
+            <label for="length">Track Length</label>
+            <input class="form-control" placeholder="Set new title" type="text" id="length"/>
+          </div>
+          <div class="form-group">
+            <label for="year">Year</label>
+            <input class="form-control" placeholder="Set new year" type="text" id="year"/>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-success" type="button" name="button" onclick="update()">Update</button>
+          <button class="btn btn-success" type="button" name="button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br />
+  <br />
+  <br />
+  <div class="container">
+    <form id="add-new-track">
+      <span>Select File </span>
+      <input id="file" class="file" name="file" type="file" />
+      <input type="submit" class="btn btn-success" value="Add Track"/>
+    </form>
+    <br />
+    <br />
+    <br />
+    <h1>Tracks</h1>
+    <br />
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>
+
+          </th>
+          <th>
+            Title
+          </th>
+          <th>
+            Artist
+          </th>
+          <th>
+            Album
+          </th>
+          <th>
+            Length
+          </th>
+          <th>
+            Year
+          </th>
+        </tr>
+      </thead>
+      <tbody id="tracks-table">
+
+      </tbody>
+    </table>
+    <br />
+    <span class="error-message"></span>
+    <br />
+    <br />
+    <button onclick="checkIfRadioButtonisFilled()" type="button" class="btn btn-success">Delete</button>
+    <button onclick="check()" type="button" class="btn btn-success" data-toggle="modal">Update</button>
+  </div>
+
+    <script src="getAllTracks.js"></script>
+    <script src="addNewTrack.js"></script>
+    <script src="deleteTrack.js"></script>
+    <script src="updateTrack.js"></script>
+  </body>
+</html>
